@@ -43,23 +43,29 @@ export default function NavHeader() {
           {/* Desktop links */}
           <nav className="hidden md:flex items-center gap-1">
             {NAV_ITEMS.map((item) => (
-              <button
+              <motion.button
                 key={item}
                 onClick={() => scrollTo(item)}
-                className="px-4 py-2 text-sm text-gray-400 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-200 cursor-pointer"
+                whileHover={{ color: "#ffffff", backgroundColor: "rgba(255,255,255,0.05)" }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ duration: 0.15 }}
+                className="px-4 py-2 text-sm text-gray-400 rounded-lg cursor-pointer"
               >
                 {item}
-              </button>
+              </motion.button>
             ))}
           </nav>
 
           {/* Desktop CTA */}
-          <button
+          <motion.button
             onClick={() => scrollTo("Contact")}
-            className="hidden md:block bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 cursor-pointer"
+            whileHover={{ scale: 1.05, backgroundColor: "#3b82f6" }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ duration: 0.15 }}
+            className="hidden md:block bg-navy text-white text-sm font-semibold px-5 py-2 rounded-full cursor-pointer"
           >
             Get Started
-          </button>
+          </motion.button>
 
           {/* Mobile hamburger */}
           <button
@@ -93,7 +99,7 @@ export default function NavHeader() {
             ))}
             <button
               onClick={() => scrollTo("Contact")}
-              className="mt-2 w-full py-3 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
+              className="mt-2 w-full py-3 bg-navy hover:bg-navy-light text-white text-sm font-semibold rounded transition-colors cursor-pointer"
             >
               Get Started
             </button>

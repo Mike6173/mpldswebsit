@@ -60,15 +60,18 @@ export function RecentProjectSection() {
                 </p>
                 <h3 className="text-2xl font-bold text-white">One Source Solutions</h3>
               </div>
-              <a
+              <motion.a
                 href="https://one-source-solutions.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-300 text-sm font-medium hover:bg-blue-500/20 hover:border-blue-400/60 hover:text-blue-200 transition-all duration-200 cursor-pointer flex-shrink-0"
+                whileHover={{ scale: 1.04, backgroundColor: "rgba(59,130,246,0.2)", borderColor: "rgba(96,165,250,0.6)" }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.18 }}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-navy/40 bg-navy/10 text-navy-light text-sm font-medium cursor-pointer flex-shrink-0"
               >
                 one-source-solutions.com
                 <ExternalLink size={12} />
-              </a>
+              </motion.a>
             </div>
 
             {/* Description */}
@@ -77,16 +80,23 @@ export function RecentProjectSection() {
             </p>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <motion.div
+              className="flex flex-wrap gap-2 mb-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08, delayChildren: 0.2 } } }}
+            >
               {["Web Design", "Local SEO", "Lead Generation", "Mobile Responsive"].map((tag) => (
-                <span
+                <motion.span
                   key={tag}
-                  className="px-3 py-1 text-xs font-medium text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-full"
+                  variants={{ hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } } }}
+                  className="px-3 py-1 text-xs font-medium text-navy-light bg-navy/10 border border-navy/20 rounded-full"
                 >
                   {tag}
-                </span>
+                </motion.span>
               ))}
-            </div>
+            </motion.div>
 
             {/* Divider */}
             <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
@@ -106,7 +116,7 @@ export function RecentProjectSection() {
             {/* Reviewer row */}
             <div className="flex items-center gap-3">
               <Avatar.Root className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                <Avatar.Fallback className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600/40 to-violet-600/40 border border-blue-500/40 text-blue-200 font-bold text-sm">
+                <Avatar.Fallback className="w-full h-full flex items-center justify-center bg-gradient-to-br from-navy/40 to-navy-light/40 border border-navy/40 text-white font-bold text-sm">
                   B
                 </Avatar.Fallback>
               </Avatar.Root>

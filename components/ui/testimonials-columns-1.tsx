@@ -26,7 +26,7 @@ export const TestimonialsColumn = (props: {
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role }, i) => (
                 <div
-                  className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg shadow-blue-500/5 max-w-xs w-full"
+                  className="p-8 rounded border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg shadow-navy/5 max-w-xs w-full"
                   key={i}
                 >
                   <div className="text-gray-300 text-sm leading-relaxed">{text}</div>
@@ -40,7 +40,7 @@ export const TestimonialsColumn = (props: {
                     />
                     <div className="flex flex-col">
                       <div className="font-semibold text-white tracking-tight leading-5">{name}</div>
-                      <div className="leading-5 text-blue-400 text-sm tracking-tight">{role}</div>
+                      <div className="leading-5 text-navy-light text-sm tracking-tight">{role}</div>
                     </div>
                   </div>
                 </div>
@@ -77,12 +77,6 @@ export const testimonials = [
     image: "https://randomuser.me/api/portraits/men/55.jpg",
     name: "Robert Brofsky",
     role: "Director, Brofsky Marketing",
-  },
-  {
-    text: "The AI automation systems MPLDS built for our marketing workflows saved us 25 hours per week and improved campaign performance dramatically. Their AI consulting is truly next-level for business growth.",
-    image: "https://randomuser.me/api/portraits/men/67.jpg",
-    name: "Vincent Bamundo",
-    role: "VP Marketing, Bamundo Corp",
   },
   {
     text: "Their social media management took our brand from invisible to industry leader in under 6 months. Engagement up 500%, followers tripled, and direct message leads are flooding in every single week.",

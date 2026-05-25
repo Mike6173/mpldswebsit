@@ -45,24 +45,33 @@ export default function TeamSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
           className="mx-auto mb-16 flex max-w-5xl flex-col items-center px-6 text-center"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-400 text-sm font-medium tracking-wide mb-6">
+          <motion.span
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+            className="inline-block px-4 py-1.5 rounded-full border border-navy/40 bg-navy/10 text-navy-light text-sm font-medium tracking-wide mb-6"
+          >
             The Team
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          </motion.span>
+          <motion.h2
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } }}
+            className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          >
             Built by{" "}
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Experts
             </span>
-          </h2>
-          <p className="max-w-2xl text-gray-400 text-lg">
+          </motion.h2>
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+            className="max-w-2xl text-gray-400 text-lg"
+          >
             A dedicated team of marketers, developers, and data scientists — all focused on one thing: growing your business.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="relative w-full">
@@ -75,7 +84,7 @@ export default function TeamSection() {
                 className="group flex w-56 shrink-0 flex-col"
                 key={member.name}
               >
-                <div className="relative h-72 w-full overflow-hidden rounded-2xl bg-gray-900 border border-white/10 group-hover:border-blue-500/40 transition-colors duration-300">
+                <div className="relative h-72 w-full overflow-hidden rounded bg-gray-900 border border-white/10 group-hover:border-navy/40 transition-colors duration-300">
                   <Image
                     alt={member.name}
                     className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
@@ -85,7 +94,7 @@ export default function TeamSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 w-full p-3">
                     <h3 className="font-semibold text-white text-sm">{member.name}</h3>
-                    <p className="text-blue-400 text-xs mt-0.5">{member.role}</p>
+                    <p className="text-navy-light text-xs mt-0.5">{member.role}</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +120,7 @@ export default function TeamSection() {
             &ldquo;MPL Digital Services didn&apos;t just run our ads — they built us a complete growth engine. In 6 months we 4x&apos;d revenue.&rdquo;
           </p>
           <div className="flex flex-col items-center gap-3">
-            <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-blue-500/40">
+            <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-navy/40">
               <Image
                 alt="Client"
                 className="h-full w-full object-cover"

@@ -31,7 +31,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-4"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-400 text-sm font-medium tracking-wide backdrop-blur-sm">
+          <span className="inline-block px-4 py-1.5 rounded-full border border-navy/40 bg-navy/10 text-white text-sm font-medium tracking-wide backdrop-blur-sm">
             Digital Marketing Agency
           </span>
         </motion.div>
@@ -65,22 +65,28 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <button
+          <motion.button
             onClick={() => {
               document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full transition-all duration-200 hover:scale-105 cursor-pointer shadow-lg shadow-blue-500/25"
+            whileHover={{ scale: 1.06, backgroundColor: "#3b82f6" }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.18 }}
+            className="px-8 py-3.5 bg-navy text-white font-semibold rounded-full cursor-pointer shadow-lg shadow-navy/25"
           >
             Get Started
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={() => {
               document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-8 py-3.5 border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-full transition-all duration-200 hover:scale-105 cursor-pointer backdrop-blur-sm"
+            whileHover={{ scale: 1.06, borderColor: "rgba(255,255,255,0.4)", backgroundColor: "rgba(255,255,255,0.1)" }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.18 }}
+            className="px-8 py-3.5 border border-white/20 bg-white/5 text-white font-semibold rounded-full cursor-pointer backdrop-blur-sm"
           >
             View Services
-          </button>
+          </motion.button>
         </motion.div>
 
         {/* Scroll hint */}

@@ -18,9 +18,9 @@ const services = [
     title: "Web Design & Development",
     description:
       "High-converting websites and web apps built with modern tech. Fast, responsive, and designed to turn visitors into customers.",
-    color: "from-blue-500/20 to-blue-600/10",
-    border: "border-blue-500/20 hover:border-blue-500/50",
-    iconColor: "text-blue-400",
+    color: "from-navy/20 to-navy/10",
+    border: "border-navy/20 hover:border-navy/50",
+    iconColor: "text-navy-light",
   },
   {
     icon: Share2,
@@ -72,9 +72,9 @@ const services = [
     title: "AI Consulting & Automation",
     description:
       "Custom AI workflows, chatbots, and automation systems that save time, reduce costs, and scale your business operations.",
-    color: "from-blue-400/20 to-indigo-600/10",
-    border: "border-indigo-500/20 hover:border-indigo-500/50",
-    iconColor: "text-indigo-400",
+    color: "from-navy/20 to-navy-deep/10",
+    border: "border-navy/20 hover:border-navy/50",
+    iconColor: "text-navy-light",
   },
 ];
 
@@ -83,27 +83,35 @@ export function ServicesSection() {
     <section id="services" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+        <motion.div
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
+        >
+          <motion.span
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+            className="inline-block px-4 py-1.5 rounded-full border border-navy/40 bg-navy/10 text-navy-light text-sm font-medium tracking-wide mb-6"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-400 text-sm font-medium tracking-wide mb-6">
-              What We Do
+            What We Do
+          </motion.span>
+          <motion.h2
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } }}
+            className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          >
+            Full-Stack{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Digital Services
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Full-Stack{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Digital Services
-              </span>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Everything you need to dominate your market online — under one roof.
-            </p>
-          </motion.div>
-        </div>
+          </motion.h2>
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+            className="text-gray-400 text-lg max-w-2xl mx-auto"
+          >
+            Everything you need to dominate your market online — under one roof.
+          </motion.p>
+        </motion.div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -133,7 +141,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
 
-                <div className="mt-5 flex items-center gap-2 text-blue-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div className="mt-5 flex items-center gap-2 text-navy-light text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <span>Learn more</span>
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="translate-x-0 group-hover:translate-x-1 transition-transform duration-200">
                     <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -149,7 +157,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: services.length * 0.08 }}
-            className="md:col-span-2 lg:col-span-1 p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-1 p-6 rounded border border-white/10 bg-gradient-to-br from-navy/20 to-navy-deep/20 flex flex-col justify-between"
           >
             <div>
               <h3 className="text-white font-bold text-xl mb-3">Ready to scale?</h3>
@@ -157,12 +165,15 @@ export function ServicesSection() {
                 Let&apos;s build a custom strategy for your business. Free consultation, no commitment.
               </p>
             </div>
-            <button
+            <motion.button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="mt-6 w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all duration-200 cursor-pointer hover:scale-[1.02]"
+              whileHover={{ scale: 1.03, backgroundColor: "#3b82f6" }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.18 }}
+              className="mt-6 w-full py-3 bg-navy text-white font-semibold rounded cursor-pointer"
             >
               Start a Project
-            </button>
+            </motion.button>
           </motion.div>
         </div>
       </div>

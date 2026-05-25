@@ -15,25 +15,34 @@ export function SplineSection() {
           <div className="flex flex-col md:flex-row h-full min-h-[500px]">
             {/* Left content */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.13 } } }}
               className="flex-1 p-8 md:p-12 relative z-10 flex flex-col justify-center"
             >
-              <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-400 text-sm font-medium tracking-wide mb-6 w-fit">
+              <motion.span
+                variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                className="inline-block px-4 py-1.5 rounded-full border border-navy/40 bg-navy/10 text-navy-light text-sm font-medium tracking-wide mb-6 w-fit"
+              >
                 AI + Automation
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              </motion.span>
+              <motion.h2
+                variants={{ hidden: { opacity: 0, x: -24 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } }}
+                className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+              >
                 AI + Automation{" "}
                 <br />
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                   Driven Marketing
                 </span>
-              </h2>
-              <p className="text-gray-400 text-lg leading-relaxed max-w-lg mb-8">
+              </motion.h2>
+              <motion.p
+                variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                className="text-gray-400 text-lg leading-relaxed max-w-lg mb-8"
+              >
                 We leverage cutting-edge AI systems and marketing automation to put your business growth on autopilot. From intelligent ad optimization to automated lead nurturing workflows — we build systems that scale without limits.
-              </p>
+              </motion.p>
             </motion.div>
 
             {/* Right 3D Robot */}

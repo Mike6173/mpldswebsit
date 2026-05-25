@@ -1,15 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #080c14;
-  --foreground: #ffffff;
+  --background: 0 0% 100%;
+  --foreground: 222 20% 8%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 20% 8%;
+  --ring: 220 75% 15%;
+
+  /* Brand — navy-based */
+  --brand: 220 75% 15%;
+  --brand-foreground: 0 0% 100%;
+  --brand-soft: 220 33% 97%;
+  --brand-dark: 220 80% 10%;
+
+  /* Extended navy palette */
+  --navy: 220 75% 15%;
+  --navy-deep: 220 80% 10%;
+  --navy-light: 220 60% 26%;
+  --ink: 222 47% 11%;
+  --cloud: 220 33% 97%;
+  --line: 214 32% 91%;
+
+  --primary: 220 75% 15%;
+  --primary-foreground: 0 0% 100%;
+  --radius: 0.25rem;       /* 4px default — sharp, professional */
+  --radius-sm: 0.125rem;   /* 2px */
+  --radius-md: 0.375rem;   /* 6px max for content blocks */
+  --radius-lg: 0.5rem;     /* 8px images only */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-brand: hsl(var(--brand));
+  --color-brand-soft: hsl(var(--brand-soft));
+  --color-brand-dark: hsl(var(--brand-dark));
+  --color-navy: hsl(var(--navy));
+  --color-navy-deep: hsl(var(--navy-deep));
+  --color-navy-light: hsl(var(--navy-light));
+  --color-ink: hsl(var(--ink));
+  --color-cloud: hsl(var(--cloud));
+  --color-line: hsl(var(--line));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Override Tailwind's default radius scale to match brand */
+  --radius-xl:   0.375rem;
+  --radius-2xl:  0.375rem;
+  --radius-3xl:  0.375rem;
+  --radius-full: 9999px;
 
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
@@ -17,76 +68,30 @@
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% - var(--gap))); }
+  to   { transform: translateX(calc(-100% - var(--gap))); }
 }
-
 @keyframes marquee-vertical {
   from { transform: translateY(0); }
-  to { transform: translateY(calc(-100% - var(--gap))); }
+  to   { transform: translateY(calc(-100% - var(--gap))); }
 }
 
-@keyframes orb-float {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.08); }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Noise texture overlay on root */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
-
-/* Subtle dot grid */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.18;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #080c14;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(37, 99, 235, 0.3);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(37, 99, 235, 0.6);
-}
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: hsl(var(--muted)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--brand) / 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--brand) / 0.6); }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }

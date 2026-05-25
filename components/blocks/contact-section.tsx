@@ -45,28 +45,37 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 px-6 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-navy/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-2xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
           className="text-center mb-12"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-400 text-sm font-medium tracking-wide mb-6">
+          <motion.span
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+            className="inline-block px-4 py-1.5 rounded-full border border-navy/40 bg-navy/10 text-navy-light text-sm font-medium tracking-wide mb-6"
+          >
             Get In Touch
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          </motion.span>
+          <motion.h2
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } }}
+            className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          >
             Start Your{" "}
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Project
             </span>
-          </h2>
-          <p className="text-gray-400 text-lg">
+          </motion.h2>
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+            className="text-gray-400 text-lg"
+          >
             Tell us about your business. We&apos;ll put together a custom strategy — no charge.
-          </p>
+          </motion.p>
         </motion.div>
 
         <motion.div
@@ -83,12 +92,15 @@ export function ContactSection() {
               <p className="text-gray-400">
                 We&apos;ll be in touch within 24 hours. Looking forward to working with you.
               </p>
-              <button
+              <motion.button
                 onClick={() => setStatus("idle")}
-                className="mt-4 px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-medium transition-colors cursor-pointer"
+                whileHover={{ scale: 1.05, backgroundColor: "#3b82f6" }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.18 }}
+                className="mt-4 px-6 py-2.5 bg-navy text-white rounded-full text-sm font-medium cursor-pointer"
               >
                 Send Another Message
-              </button>
+              </motion.button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -105,7 +117,7 @@ export function ContactSection() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="John Smith"
-                    className="w-full bg-white/5 border border-white/10 focus:border-blue-500/60 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none transition-colors duration-200 text-sm"
+                    className="w-full bg-white/5 border border-white/10 focus:border-navy/60 rounded px-4 py-3 text-white placeholder-gray-600 outline-none transition-colors duration-200 text-sm"
                   />
                 </div>
                 <div>
@@ -120,7 +132,7 @@ export function ContactSection() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="john@company.com"
-                    className="w-full bg-white/5 border border-white/10 focus:border-blue-500/60 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none transition-colors duration-200 text-sm"
+                    className="w-full bg-white/5 border border-white/10 focus:border-navy/60 rounded px-4 py-3 text-white placeholder-gray-600 outline-none transition-colors duration-200 text-sm"
                   />
                 </div>
               </div>
@@ -137,7 +149,7 @@ export function ContactSection() {
                   value={form.business}
                   onChange={handleChange}
                   placeholder="Your Company LLC"
-                  className="w-full bg-white/5 border border-white/10 focus:border-blue-500/60 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none transition-colors duration-200 text-sm"
+                  className="w-full bg-white/5 border border-white/10 focus:border-navy/60 rounded px-4 py-3 text-white placeholder-gray-600 outline-none transition-colors duration-200 text-sm"
                 />
               </div>
 
@@ -153,7 +165,7 @@ export function ContactSection() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Tell us about your business, goals, and what services you're interested in..."
-                  className="w-full bg-white/5 border border-white/10 focus:border-blue-500/60 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none transition-colors duration-200 text-sm resize-none"
+                  className="w-full bg-white/5 border border-white/10 focus:border-navy/60 rounded px-4 py-3 text-white placeholder-gray-600 outline-none transition-colors duration-200 text-sm resize-none"
                 />
               </div>
 
@@ -163,10 +175,13 @@ export function ContactSection() {
                 </p>
               )}
 
-              <button
+              <motion.button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full py-4 bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 text-white font-semibold rounded-xl transition-all duration-200 cursor-pointer hover:scale-[1.01] flex items-center justify-center gap-2 text-base"
+                whileHover={status !== "loading" ? { scale: 1.02, backgroundColor: "#3b82f6" } : {}}
+                whileTap={status !== "loading" ? { scale: 0.98 } : {}}
+                transition={{ duration: 0.18 }}
+                className="w-full py-4 bg-navy disabled:bg-navy/50 text-white font-semibold rounded cursor-pointer flex items-center justify-center gap-2 text-base"
               >
                 {status === "loading" ? (
                   <div className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
@@ -176,7 +191,7 @@ export function ContactSection() {
                     <Send size={16} />
                   </>
                 )}
-              </button>
+              </motion.button>
             </form>
           )}
         </motion.div>

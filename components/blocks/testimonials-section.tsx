@@ -22,7 +22,7 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto mb-4"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-400 text-sm font-medium tracking-wide mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full border border-navy/40 bg-navy/10 text-navy-light text-sm font-medium tracking-wide mb-6">
             Testimonials
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 leading-tight">

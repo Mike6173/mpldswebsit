@@ -1,103 +1,89 @@
 import type { Metadata } from "next";
-import { Target, Zap, Eye, TrendingUp } from "lucide-react";
-import { Nav } from "@/components/layout/nav";
-import { Footer } from "@/components/layout/footer";
-import { CtaStrip } from "@/components/sections/cta-strip";
-import { FadeIn } from "@/components/motion/fade-in";
-import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children";
+import Image from "next/image";
+import { Container, Label } from "@/components/ui";
+import { CallToAction, TextLink, breadcrumbs } from "@/components/blocks";
+import { JsonLd } from "@/components/json-ld";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Mike Lopez | Marlboro, NJ Tech & Web Help",
   description:
-    "MPL Digital Services is a full-service digital agency based in NJ, run by Mike Lopez. We build digital systems that scale businesses online.",
+    "I'm Mike, a tech consultant in Marlboro, NJ. I help businesses with websites, apps, social media and AI. You tell me the problem, I help fix it.",
+  alternates: { canonical: "/about" },
 };
 
-const values = [
-  { icon: Target,    title: "Results",      description: "Every decision traces back to measurable outcomes for your business." },
-  { icon: Zap,       title: "Speed",        description: "We move fast without cutting corners. Rapid delivery, solid execution." },
-  { icon: Eye,       title: "Transparency", description: "No jargon, no black boxes. You see exactly what we're doing and why." },
-  { icon: TrendingUp,title: "Quality",      description: "We hold every project to the standard we'd want for our own business." },
+const things = [
+  "Websites and apps",
+  "Social media posting and automation",
+  "Tech and AI consulting",
+  "Digital art and graphics in Canva",
+  "Video editing",
 ];
 
 export default function AboutPage() {
+  const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: site.owner,
+    jobTitle: "Technology Consultant",
+    worksFor: { "@id": `${site.url}/#business` },
+    homeLocation: { "@type": "Place", name: `${site.town}, ${site.state}` },
+    url: `${site.url}/about`,
+  };
+
   return (
     <>
-      <Nav />
-      <main>
-        <section className="bg-navy-deep py-32 md:py-40">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-            <FadeIn>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/60 mb-6">About MPL Digital Services</p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-6 max-w-3xl">
-                Built to scale businesses online.
-              </h1>
-              <p className="text-xl text-white/70 leading-relaxed max-w-2xl">
-                A New Jersey-based digital agency run by Mike Lopez. We specialize in three things and do them well — web design, data solutions, and social media marketing.
-              </p>
-            </FadeIn>
-          </div>
-        </section>
+      <JsonLd data={person} />
+      <JsonLd data={breadcrumbs([{ name: "About", path: "/about" }])} />
 
-        <section className="bg-muted/40 py-24">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <FadeIn direction="left">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-4">Our story</p>
-                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">One mission, zero shortcuts</h2>
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>MPL Digital Services was built by Mike Lopez — driven by the belief that too many growing businesses were being held back by outdated websites, messy data, and inconsistent social media.</p>
-                    <p>Based in New Jersey and serving clients nationwide, we specialize in three things: web design, data solutions, and social media marketing. Not because we can't do more — but because we believe depth beats breadth.</p>
-                    <p>Every project we take on is treated like it's our own business on the line. Because when you win, we win.</p>
-                  </div>
-                </div>
-              </FadeIn>
-              <FadeIn direction="right">
-                <div className="bg-white border border-border rounded p-8">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-4">From the founder</p>
-                  <blockquote className="text-lg font-medium text-foreground leading-relaxed mb-6 italic">
-                    &ldquo;We started MPLDS because too many businesses were getting left behind digitally. We&apos;re here to fix that — one project at a time.&rdquo;
-                  </blockquote>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-brand-soft flex items-center justify-center">
-                      <span className="text-sm font-bold text-brand">M</span>
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">Mike Lopez</p>
-                      <p className="text-xs text-muted-foreground">Co-founder · MPL Digital Services</p>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+        <Container className="grid gap-14 md:grid-cols-[1.4fr_1fr]">
+          <div>
+            <Label className="animate-rise">About</Label>
+            <h1 className="display mt-5 text-[clamp(3rem,8vw,6rem)] font-extrabold animate-rise [animation-delay:80ms]">
+              Hey, I&apos;m Mike.
+            </h1>
+            <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-ink-2 animate-rise [animation-delay:160ms]">
+              <p>
+                I&apos;ve always been into technology. These days I do a lot of tech consulting for
+                businesses, mostly here in {site.town} and around {site.county}.
+              </p>
+              <p>
+                A lot of my work comes from cold calling and networking. People tell me a problem in
+                their business and I help them figure it out. Sometimes that&apos;s a new website.
+                Sometimes it&apos;s getting their social media running on autopilot. Sometimes it&apos;s an
+                app or an AI tool that saves them a few hours a week.
+              </p>
+              <p>Whatever it is, I keep it simple and I explain it in plain English.</p>
             </div>
           </div>
-        </section>
 
-        <section className="bg-white py-24">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-            <FadeIn className="mb-12">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-4">What drives us</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Our values</h2>
-            </FadeIn>
-            <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
-              {values.map((value) => (
-                <StaggerItem key={value.title}>
-                  <div className="p-6 bg-muted/40 border border-border rounded h-full hover:border-brand hover:bg-white transition-all duration-300 group">
-                    <div className="w-10 h-10 rounded bg-brand-soft flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200">
-                      <value.icon className="w-5 h-5 text-brand" />
-                    </div>
-                    <h3 className="text-base font-bold text-foreground mb-2">{value.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerChildren>
-          </div>
-        </section>
+          <aside className="self-end animate-rise [animation-delay:240ms]">
+            <div className="rounded-3xl border border-line bg-paper-2/60 p-8">
+              <Image src="/mplds.png" alt="MPL Digital Services logo" width={64} height={64} className="rounded-xl" />
+              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-3">Stuff I do</p>
+              <ul className="mt-4 space-y-3">
+                {things.map((t) => (
+                  <li key={t} className="flex items-baseline gap-3 text-[17px]">
+                    <span className="size-1.5 shrink-0 translate-y-[-2px] rounded-full bg-accent" />
+                    {t}
+                    {t === "Video editing" && (
+                      <span className="rounded-full bg-paper px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink-3">
+                        soon
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-8 text-[15px] text-ink-2">
+                Want short tips once in a while? <TextLink href="/newsletter">Join the newsletter</TextLink>.
+              </p>
+            </div>
+          </aside>
+        </Container>
+      </section>
 
-        <CtaStrip />
-      </main>
-      <Footer />
+      <CallToAction title="Tell me what's going on." />
     </>
   );
 }

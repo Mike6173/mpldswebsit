@@ -1,24 +1,23 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { site } from "@/lib/site";
+
+const routes: { path: string; priority: number }[] = [
+  { path: "", priority: 1 },
+  { path: "/services/web-design", priority: 0.9 },
+  { path: "/services/social-media", priority: 0.8 },
+  { path: "/services/tech-consulting", priority: 0.8 },
+  { path: "/services", priority: 0.7 },
+  { path: "/portfolio", priority: 0.8 },
+  { path: "/about", priority: 0.6 },
+  { path: "/contact", priority: 0.7 },
+  { path: "/newsletter", priority: 0.3 },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://mpldigitalservices.com";
-  const routes = [
-    "",
-    "/services",
-    "/services/web-design",
-    "/services/data-solutions",
-    "/services/social-media",
-    "/portfolio",
-    "/portfolio/web-design",
-    "/portfolio/data-solutions",
-    "/portfolio/social-media",
-    "/about",
-    "/contact",
-  ];
-  return routes.map((route) => ({
-    url: `${base}${route}`,
+  return routes.map((r) => ({
+    url: `${site.url}${r.path}`,
     lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency: "monthly",
+    priority: r.priority,
   }));
 }

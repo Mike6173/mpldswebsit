@@ -1,0 +1,20 @@
+# MPL Digital Services (MPLDS)
+
+> A one-person digital services business run by Mike Lopez in Marlboro, New Jersey (Monmouth County). Builds websites and apps, runs and automates social media, and does technology and AI consulting for small businesses.
+
+- Owner: Mike Lopez
+- Location: Marlboro, NJ 07746. Works with businesses in Marlboro, Manalapan, Morganville, Freehold, Holmdel, Colts Neck, Matawan, Old Bridge, Englishtown and the rest of Monmouth County, plus remote clients.
+- Email: mpldigitalservices@gmail.com
+- Get a quote: https://mpldigitalservices.com/contact
+
+## Services
+
+- [Website & App Development](https://mpldigitalservices.com/services/web-design): new websites, redesigns, online stores and mobile apps. Builds on WordPress, Shopify, Squarespace, Wix, Webflow, GoDaddy or custom code. SEO setup included.
+- [Social Media](https://mpldigitalservices.com/services/social-media): posting, Canva graphics, and posting automation for Instagram, Facebook, TikTok and LinkedIn.
+- [Tech & AI Consulting](https://mpldigitalservices.com/services/tech-consulting): picking the right software, setting up AI tools and business automations, cleaning up spreadsheets.
+- Video editing: coming soon.
+
+## Pages
+
+- [Website Portfolio](https://mpldigitalservices.com/portfolio): live service business websites and online stores built by MPLDS.
+- [About Mike](https://mpldigitalservices.com/about)

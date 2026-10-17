@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f4f4f0;
-  --paper-2: #e8e9e4;
+  --paper: #f4f1ea;
+  --paper-2: #ebe6dc;
   --ink: #121722;
   --ink-2: #434a57;
   --ink-3: #6f7685;
-  --line: #d5d7d0;
+  --line: #d9d2c3;
   /* Pulled from the logo */
   --brand-navy: #0e3260;
   --brand-blue: #2d8ad6;
-  --accent: #1f6fcf;
-  --accent-ink: #15529e;
+  --accent: #e2542b;
+  --accent-ink: #b63d18;
   --night: #0b1f3b;
 }
 

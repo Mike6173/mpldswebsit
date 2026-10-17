@@ -7,7 +7,7 @@ export const site = {
   owner: "Mike Lopez",
   email: "mpldigitalservices@gmail.com",
   // Add your number like "(732) 555-0123" and every Call button turns on.
-  phone: "" as string,
+  phone: "(732) 533-8578" as string,
   town: "Marlboro",
   state: "NJ",
   zip: "07746",

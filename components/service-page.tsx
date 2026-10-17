@@ -1,4 +1,4 @@
-import { Container, Label, PageTop, QuoteButtons } from "@/components/ui";
+import { Container, PageTop, QuoteButtons } from "@/components/ui";
 import { CallToAction, Faq, Points, breadcrumbs, faqSchema } from "@/components/blocks";
 import { JsonLd } from "@/components/json-ld";
 import { site } from "@/lib/site";
@@ -52,8 +52,7 @@ export function ServicePage(p: Props) {
       <section className="py-20 md:py-24">
         <Container className="grid gap-10 md:grid-cols-[1fr_1.6fr]">
           <div>
-            <Label>Questions</Label>
-            <h2 className="display mt-4 text-[clamp(2rem,4vw,3rem)] font-bold">Quick answers.</h2>
+            <h2 className="display text-[clamp(2rem,4vw,3rem)] font-bold">Quick answers.</h2>
           </div>
           <Faq items={p.faq} />
         </Container>

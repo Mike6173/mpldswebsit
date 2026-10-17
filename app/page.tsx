@@ -71,7 +71,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/portfolio"
-              className="absolute -left-2 -top-6 z-20 rotate-[-6deg] rounded-full bg-accent px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-white shadow-lg transition-transform hover:rotate-0"
+              className="absolute -left-2 -top-6 z-20 rotate-[-6deg] rounded-full bg-accent px-4 py-2 text-[14px] font-medium text-white shadow-lg transition-transform hover:rotate-0"
             >
               Real sites I built ↗
             </Link>
@@ -99,8 +99,7 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <Label>What I do</Label>
-              <h2 className="display mt-4 text-[clamp(2.2rem,5vw,3.75rem)] font-bold">Here&apos;s how I can help.</h2>
+              <h2 className="display text-[clamp(2.2rem,5vw,3.75rem)] font-bold">Here&apos;s how I can help.</h2>
             </div>
             <TextLink href="/services">All services</TextLink>
           </div>
@@ -131,8 +130,7 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <Label>Recent work</Label>
-              <h2 className="display mt-4 text-[clamp(2.2rem,5vw,3.75rem)] font-bold">Some sites I&apos;ve built.</h2>
+              <h2 className="display text-[clamp(2.2rem,5vw,3.75rem)] font-bold">Some sites I&apos;ve built.</h2>
             </div>
             <Link href="/portfolio" className="group inline-flex items-center gap-1.5 font-medium hover:text-accent">
               See all of them <ArrowUpRight className="size-4" />
@@ -140,9 +138,9 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
             <WorkCard project={b} />
-            <WorkCard project={ecommerceProjects[1]} />
             <WorkCard project={serviceProjects[2]} />
             <WorkCard project={serviceProjects[4]} />
+            <WorkCard project={serviceProjects[3]} />
           </div>
         </Container>
       </section>
@@ -150,8 +148,7 @@ export default function HomePage() {
       {/* How it works */}
       <section className="py-20 md:py-28">
         <Container>
-          <Label>How it works</Label>
-          <h2 className="display mt-4 mb-12 text-[clamp(2.2rem,5vw,3.75rem)] font-bold">Pretty simple.</h2>
+          <h2 className="display mb-12 text-[clamp(2.2rem,5vw,3.75rem)] font-bold">Pretty simple.</h2>
           <Points items={steps} />
         </Container>
       </section>
@@ -161,8 +158,7 @@ export default function HomePage() {
         <Container>
           <div className="grid gap-10 rounded-3xl bg-accent p-8 text-white md:grid-cols-[1.2fr_1fr] md:p-14">
             <div>
-              <Label className="text-white/70">Local</Label>
-              <h2 className="display mt-4 text-[clamp(2.2rem,5vw,3.5rem)] font-bold">
+              <h2 className="display text-[clamp(2.2rem,5vw,3.5rem)] font-bold">
                 I live in {site.town}.
               </h2>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-white/90">

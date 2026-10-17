@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Container, Label, PageTop } from "@/components/ui";
+import { Container, PageTop } from "@/components/ui";
 import { CallToAction, WorkCard, breadcrumbs } from "@/components/blocks";
 import { JsonLd } from "@/components/json-ld";
 import { ecommerceProjects, serviceProjects } from "@/lib/site";
@@ -32,8 +32,7 @@ export default function PortfolioPage() {
 
       <section id="service-based" className="scroll-mt-24 border-t border-line py-16 md:py-24">
         <Container>
-          <Label>Service-based</Label>
-          <h2 className="display mt-4 text-[clamp(2rem,4.5vw,3.25rem)] font-bold">Service businesses</h2>
+          <h2 className="display text-[clamp(2rem,4.5vw,3.25rem)] font-bold">Service businesses</h2>
           <p className="mt-3 max-w-lg text-[17px] text-ink-2">Sites built to get calls and quote requests.</p>
           <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
             {serviceProjects.map((p, i) => (
@@ -45,8 +44,7 @@ export default function PortfolioPage() {
 
       <section id="ecommerce" className="scroll-mt-24 border-t border-line bg-paper-2/40 py-16 md:py-24">
         <Container>
-          <Label>E-commerce</Label>
-          <h2 className="display mt-4 text-[clamp(2rem,4.5vw,3.25rem)] font-bold">Online stores</h2>
+          <h2 className="display text-[clamp(2rem,4.5vw,3.25rem)] font-bold">Online stores</h2>
           <p className="mt-3 max-w-lg text-[17px] text-ink-2">Shops built to sell products online.</p>
           <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
             {ecommerceProjects.map((p) => (

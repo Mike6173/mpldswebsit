@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { ServicePage } from "@/components/service-page";
-import { Container, Label } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { platforms } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -33,8 +33,7 @@ export default function WebDesignPage() {
         <section className="border-y border-line bg-paper-2/40 py-20 md:py-24">
           <Container className="grid gap-12 md:grid-cols-[1fr_1.4fr]">
             <div>
-              <Label>Platforms</Label>
-              <h2 className="display mt-4 text-[clamp(2rem,4.5vw,3.25rem)] font-bold">I can build on pretty much anything.</h2>
+              <h2 className="display text-[clamp(2rem,4.5vw,3.25rem)] font-bold">I can build on pretty much anything.</h2>
               <p className="mt-5 max-w-sm text-[17px] leading-relaxed text-ink-2">
                 Already have a site on one of these? I can fix it up instead of starting over.
               </p>

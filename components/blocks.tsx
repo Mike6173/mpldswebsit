@@ -58,18 +58,17 @@ export function WorkCard({ project, priority = false }: { project: Project; prio
   );
 }
 
-/** Numbered list of short points. Used instead of icon-card grids. */
+/** Short points in two columns. */
 export function Points({ items }: { items: { title: string; text: string }[] }) {
   return (
-    <ol className="border-t border-line">
-      {items.map((it, i) => (
-        <li key={it.title} className="grid gap-2 border-b border-line py-7 md:grid-cols-[80px_1fr_1.4fr] md:gap-8">
-          <span className="font-mono text-[13px] text-accent">{String(i + 1).padStart(2, "0")}</span>
+    <ul className="grid gap-x-14 gap-y-10 md:grid-cols-2">
+      {items.map((it) => (
+        <li key={it.title}>
           <h3 className="font-display text-2xl font-semibold tracking-tight">{it.title}</h3>
-          <p className="text-[16px] leading-relaxed text-ink-2">{it.text}</p>
+          <p className="mt-2 max-w-md text-[17px] leading-relaxed text-ink-2">{it.text}</p>
         </li>
       ))}
-    </ol>
+    </ul>
   );
 }
 

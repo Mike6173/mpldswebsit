@@ -74,6 +74,5 @@ export const serviceProjects: Project[] = [
 ];
 
 export const ecommerceProjects: Project[] = [
-  { name: "Roma Syrups", url: "https://romasyrups.com", image: "/work/romasyrups.jpg", blurb: "Cocktail and drink syrups" },
   { name: "Modern Sober", url: "https://www.modernsober.com", image: "/work/modernsober.jpg", blurb: "Non-alcoholic lifestyle shop" },
 ];

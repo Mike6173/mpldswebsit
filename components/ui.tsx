@@ -9,7 +9,7 @@ export function Container({ className, children }: { className?: string; childre
 
 export function Label({ className, children }: { className?: string; children: React.ReactNode }) {
   return (
-    <p className={cn("font-mono text-[11px] uppercase tracking-[0.18em] text-ink-3", className)}>
+    <p className={cn("text-[15px] font-medium text-ink-3", className)}>
       {children}
     </p>
   );

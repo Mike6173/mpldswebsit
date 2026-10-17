@@ -61,14 +61,14 @@ export default function AboutPage() {
           <aside className="self-end animate-rise [animation-delay:240ms]">
             <div className="rounded-3xl border border-line bg-paper-2/60 p-8">
               <Image src="/mplds.png" alt="MPL Digital Services logo" width={64} height={64} className="rounded-xl" />
-              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-3">Stuff I do</p>
+              <p className="mt-6 text-[15px] font-medium text-ink-3">Stuff I do</p>
               <ul className="mt-4 space-y-3">
                 {things.map((t) => (
                   <li key={t} className="flex items-baseline gap-3 text-[17px]">
                     <span className="size-1.5 shrink-0 translate-y-[-2px] rounded-full bg-accent" />
                     {t}
                     {t === "Video editing" && (
-                      <span className="rounded-full bg-paper px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink-3">
+                      <span className="rounded-full bg-paper px-2 py-0.5 text-[12px] text-ink-3">
                         soon
                       </span>
                     )}

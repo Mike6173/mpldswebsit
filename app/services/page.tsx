@@ -68,7 +68,7 @@ export default function ServicesPage() {
                   Short clips, reels and promo videos for your business.
                 </p>
               </div>
-              <span className="mt-10 inline-flex w-fit rounded-full bg-paper-2 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-2">
+              <span className="mt-10 inline-flex w-fit rounded-full bg-paper-2 px-3 py-1 text-[13px] font-medium text-ink-2">
                 Coming soon
               </span>
             </li>

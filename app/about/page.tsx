@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { Logo } from "@/components/logo";
 import { Container, Label } from "@/components/ui";
 import { CallToAction, TextLink, breadcrumbs } from "@/components/blocks";
 import { JsonLd } from "@/components/json-ld";
@@ -60,7 +60,7 @@ export default function AboutPage() {
 
           <aside className="self-end animate-rise [animation-delay:240ms]">
             <div className="rounded-3xl border border-line bg-paper-2/60 p-8">
-              <Image src="/mplds.png" alt="MPL Digital Services logo" width={64} height={64} className="rounded-xl" />
+              <Logo className="text-[26px]" />
               <p className="mt-6 text-[15px] font-medium text-ink-3">Stuff I do</p>
               <ul className="mt-4 space-y-3">
                 {things.map((t) => (

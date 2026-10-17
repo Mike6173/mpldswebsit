@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f4f1ea;
-  --paper-2: #ebe6dc;
-  --ink: #17150f;
-  --ink-2: #4a463d;
-  --ink-3: #7a7466;
-  --line: #d9d2c3;
-  --accent: #e2542b;
-  --accent-ink: #b63d18;
-  --night: #15130e;
+  --paper: #f4f4f0;
+  --paper-2: #e8e9e4;
+  --ink: #121722;
+  --ink-2: #434a57;
+  --ink-3: #6f7685;
+  --line: #d5d7d0;
+  /* Pulled from the logo */
+  --brand-navy: #0e3260;
+  --brand-blue: #2d8ad6;
+  --accent: #1f6fcf;
+  --accent-ink: #15529e;
+  --night: #0b1f3b;
 }
 
 @theme inline {
@@ -22,7 +25,10 @@
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
   --color-night: var(--night);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-blue: var(--brand-blue);
 
+  --font-logo: var(--font-montserrat), ui-sans-serif, sans-serif;
   --font-display: var(--font-bricolage), ui-sans-serif, sans-serif;
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;

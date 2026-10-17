@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Logo } from "@/components/logo";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -37,10 +37,9 @@ export function Header() {
         scrolled || open ? "bg-paper/90 backdrop-blur-md border-b border-line" : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-[72px] md:px-8">
-        <Link href="/" className="flex items-center gap-2.5" aria-label={`${site.name} home`}>
-          <Image src="/mplds.png" alt="" width={30} height={30} className="rounded-[6px]" priority />
-          <span className="font-display text-[17px] font-bold tracking-tight">MPLDS</span>
+      <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5 md:h-20 md:px-8">
+        <Link href="/" className="flex items-center" aria-label={`${site.name} home`}>
+          <Logo className="text-[17px] md:text-[20px]" />
         </Link>
 
         <nav aria-label="Main" className="hidden lg:block">
@@ -50,7 +49,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 rounded-full px-3.5 py-2 text-[14px] transition-colors",
+                    "flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-[14px] transition-colors",
                     isActive(item.href) || item.children?.some((c) => isActive(c.href))
                       ? "text-ink"
                       : "text-ink-2 hover:text-ink",
@@ -82,13 +81,13 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           {site.phone && (
-            <a href={telHref} className="hidden items-center gap-2 px-3 text-[14px] text-ink-2 hover:text-ink md:flex">
+            <a href={telHref} className="hidden items-center gap-2 whitespace-nowrap px-3 text-[14px] text-ink-2 hover:text-ink md:flex lg:hidden xl:flex">
               <Phone className="size-4" /> {site.phone}
             </a>
           )}
           <Link
             href="/contact"
-            className="hidden rounded-full bg-ink px-5 py-2.5 text-[14px] font-medium text-paper transition-colors hover:bg-accent sm:inline-flex"
+            className="hidden whitespace-nowrap rounded-full bg-ink px-5 py-2.5 text-[14px] font-medium text-paper transition-colors hover:bg-accent sm:inline-flex"
           >
             Get a quote
           </Link>
@@ -106,7 +105,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="h-[calc(100dvh-64px)] overflow-y-auto border-t border-line bg-paper lg:hidden">
+        <div id="mobile-menu" className="h-[calc(100dvh-68px)] overflow-y-auto border-t border-line bg-paper lg:hidden">
           <nav aria-label="Mobile" className="mx-auto max-w-6xl px-5 pb-28 pt-4">
             <ul>
               <li>

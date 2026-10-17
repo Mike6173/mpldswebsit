@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { Logo } from "@/components/logo";
 import { site, telHref } from "@/lib/site";
 import { Container } from "@/components/ui";
 
@@ -30,9 +30,8 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <Image src="/mplds.png" alt="" width={32} height={32} className="rounded-[6px]" />
-              <span className="font-display text-lg font-bold">{site.name}</span>
+            <Link href="/" className="inline-flex" aria-label={`${site.name} home`}>
+              <Logo tone="white" className="text-[24px]" />
             </Link>
             <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-paper/65">
               Websites, apps, social media and tech help for small businesses. Run by Mike out of{" "}

@@ -87,7 +87,7 @@ export function PageTop({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="pt-32 pb-14 md:pt-40 md:pb-20">
+    <section className="pt-24 pb-14 md:pt-36 md:pb-20">
       <Container>
         <Label className="animate-rise">{label}</Label>
         <h1 className="display mt-5 max-w-4xl text-[clamp(2.6rem,7vw,5.5rem)] font-bold animate-rise [animation-delay:80ms]">

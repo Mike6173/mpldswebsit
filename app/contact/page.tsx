@@ -17,7 +17,7 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={breadcrumbs([{ name: "Contact", path: "/contact" }])} />
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="pt-24 pb-20 md:pt-36 md:pb-28">
         <Container className="grid gap-14 lg:grid-cols-[1fr_1.3fr]">
           <div>
             <Label className="animate-rise">Contact</Label>

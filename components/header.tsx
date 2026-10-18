@@ -33,8 +33,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
-        scrolled || open ? "bg-paper/90 backdrop-blur-md border-b border-line" : "border-b border-transparent",
+        "fixed inset-x-0 top-0 z-50 bg-paper transition-[border-color,box-shadow] duration-300",
+        scrolled || open ? "border-b border-line" : "border-b border-transparent",
       )}
     >
       <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5 md:h-20 md:px-8">
@@ -105,8 +105,8 @@ export function Header() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="h-[calc(100dvh-68px)] overflow-y-auto border-t border-line bg-paper lg:hidden">
-          <nav aria-label="Mobile" className="mx-auto max-w-6xl px-5 pb-28 pt-4">
+        <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-[68px] md:top-20 overflow-y-auto overscroll-contain border-t border-line bg-paper lg:hidden">
+          <nav aria-label="Mobile" className="mx-auto max-w-6xl px-5 pb-12 pt-4">
             <ul>
               <li>
                 <Link href="/" className="block border-b border-line py-4 font-display text-2xl font-semibold">

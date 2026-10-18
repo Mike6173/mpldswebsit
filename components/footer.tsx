@@ -26,7 +26,7 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="bg-night pb-28 pt-16 text-paper sm:pb-12">
+    <footer className="bg-night pb-24 pt-16 text-paper sm:pb-12">
       <Container>
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>

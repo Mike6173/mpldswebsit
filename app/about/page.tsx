@@ -36,7 +36,7 @@ export default function AboutPage() {
       <JsonLd data={person} />
       <JsonLd data={breadcrumbs([{ name: "About", path: "/about" }])} />
 
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="pt-24 pb-20 md:pt-36 md:pb-28">
         <Container className="grid gap-14 md:grid-cols-[1.4fr_1fr]">
           <div>
             <Label className="animate-rise">About</Label>

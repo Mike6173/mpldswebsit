@@ -43,7 +43,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-28 md:pt-36">
+      <section className="relative overflow-hidden pt-24 md:pt-36">
         <Container className="grid items-center gap-14 pb-16 md:pb-24 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <Label className="animate-rise">
